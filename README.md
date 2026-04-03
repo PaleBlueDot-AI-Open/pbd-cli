@@ -2,6 +2,8 @@
 
 CLI tool for PaleBlueDot AI platform.
 
+![pbd-cli demo](./pbd.gif)
+
 ## Installation
 
 ### Option 1: One-click Install (Recommended)
@@ -18,20 +20,23 @@ This script automatically detects your OS and architecture, downloads the latest
 
 Download from [GitHub Releases](https://github.com/PaleBlueDot-AI-Open/pbd-cli/releases):
 
-| Platform | Architecture | Download |
-|----------|-------------|----------|
-| macOS (Intel) | amd64 | `pbd-cli_*_darwin_amd64.tar.gz` |
-| macOS (Apple Silicon) | arm64 | `pbd-cli_*_darwin_arm64.tar.gz` |
-| Linux | amd64 | `pbd-cli_*_linux_amd64.tar.gz` |
-| Linux | arm64 | `pbd-cli_*_linux_arm64.tar.gz` |
-| Windows | amd64 | `pbd-cli_*_windows_amd64.zip` |
-| Windows | arm64 | `pbd-cli_*_windows_arm64.zip` |
+
+| Platform              | Architecture | Download                        |
+| --------------------- | ------------ | ------------------------------- |
+| macOS (Intel)         | amd64        | `pbd-cli_*_darwin_amd64.tar.gz` |
+| macOS (Apple Silicon) | arm64        | `pbd-cli_*_darwin_arm64.tar.gz` |
+| Linux                 | amd64        | `pbd-cli_*_linux_amd64.tar.gz`  |
+| Linux                 | arm64        | `pbd-cli_*_linux_arm64.tar.gz`  |
+| Windows               | amd64        | `pbd-cli_*_windows_amd64.zip`   |
+| Windows               | arm64        | `pbd-cli_*_windows_arm64.zip`   |
+
 
 Extract and place the binary in your PATH.
 
 ### Option 3: Build from Source
 
 Requirements:
+
 - Go 1.23+
 
 ```bash

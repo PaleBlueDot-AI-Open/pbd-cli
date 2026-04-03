@@ -77,18 +77,15 @@ fi
 info "Latest version: $LATEST"
 
 # Build download URL based on mode
+VERSION="${LATEST#v}"
 if [ "$DEV_MODE" = true ]; then
-    # Dev release files: pbd-cli_1.0.0-dev_${OS}_${ARCH}.tar.gz
-    # Tag format: v1.0.0-dev
-    VERSION="${LATEST#v}"
-    URL="https://github.com/$REPO/releases/download/$LATEST/pbd-cli_${VERSION}_${OS}_${ARCH}.tar.gz"
+    # Dev release files: pbd-cli-dev_{version}_{os}_{arch}.tar.gz
     info "Installing DEV version (test environment)"
+    URL="https://github.com/$REPO/releases/download/$LATEST/pbd-cli-dev_${VERSION}_${OS}_${ARCH}.tar.gz"
 else
-    # Prod release files: pbd-cli_1.0.0_${OS}_${ARCH}.tar.gz
-    # Tag format: v1.0.0
-    VERSION="${LATEST#v}"
-    URL="https://github.com/$REPO/releases/download/$LATEST/pbd-cli_${VERSION}_${OS}_${ARCH}.tar.gz"
+    # Prod release files: pbd-cli_{version}_{os}_{arch}.tar.gz
     info "Installing PROD version (production environment)"
+    URL="https://github.com/$REPO/releases/download/$LATEST/pbd-cli_${VERSION}_${OS}_${ARCH}.tar.gz"
 fi
 
 info "Downloading from: $URL"

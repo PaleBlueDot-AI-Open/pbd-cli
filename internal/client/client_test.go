@@ -14,7 +14,7 @@ func TestDoAuthenticatedRequest(t *testing.T) {
 	var receivedCookie, receivedUserHeader string
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		receivedCookie = r.Header.Get("Cookie")
-		receivedUserHeader = r.Header.Get("New-Api-User")
+		receivedUserHeader = r.Header.Get("TokenRouter-User")
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte(`{"success":true}`))
 	}))
@@ -31,7 +31,7 @@ func TestDoAuthenticatedRequest(t *testing.T) {
 		t.Errorf("Cookie = %s", receivedCookie)
 	}
 	if receivedUserHeader != "123" {
-		t.Errorf("New-Api-User = %s", receivedUserHeader)
+		t.Errorf("TokenRouter-User = %s", receivedUserHeader)
 	}
 }
 

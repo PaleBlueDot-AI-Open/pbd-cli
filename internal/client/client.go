@@ -40,7 +40,7 @@ func NewClient(cfg *config.Config) *Client {
 func (c *Client) setAuthHeaders(req *http.Request) {
 	if c.cookie != "" {
 		req.Header.Set("Cookie", c.cookie)
-		req.Header.Set("New-Api-User", strconv.Itoa(c.userID))
+		req.Header.Set("TokenRouter-User", strconv.Itoa(c.userID))
 	}
 }
 
